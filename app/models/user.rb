@@ -12,6 +12,10 @@ class User < BaseModel
   attribute :token
   index     :token
 
+  # User email from oauth provider if present
+  attribute :email
+  index     :email
+
   # Submitted movies
   collection :movies, :Movie
 end
