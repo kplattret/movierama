@@ -3,6 +3,8 @@ class VotesController < ApplicationController
     authorize! :vote, _movie
 
     _voter.vote(_type)
+    # Arguments expected: movie, email, name, vote_type, link
+    VotesMailer.new_vote(_movie.title, _movie.user.email, _movie.user.name, _type.to_s, user_movies_url(_movie.user))
     redirect_to root_path, notice: 'Vote cast'
   end
 

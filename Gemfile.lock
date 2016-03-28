@@ -59,6 +59,7 @@ GEM
       activesupport (>= 3.0)
       request_store (~> 1.0)
     erubis (2.7.0)
+    excon (0.48.0)
     execjs (2.2.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
@@ -101,6 +102,9 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
+    mandrill-api (1.0.53)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
     method_source (0.8.2)
     mime-types (2.4.2)
     mini_portile (0.6.0)
@@ -271,6 +275,7 @@ DEPENDENCIES
   guard-rspec
   haml-rails
   jquery-rails
+  mandrill-api
   newrelic_rpm
   ohm
   ohm-contrib

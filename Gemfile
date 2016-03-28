@@ -47,6 +47,9 @@ gem 'turbolinks'
 # UX building blocks
 gem 'bootstrap-sass'
 
+# Transactional emails
+gem 'mandrill-api'
+
 
 gem 'omniauth', '~> 1.3.1'  # Authentication
 gem 'omniauth-github'
