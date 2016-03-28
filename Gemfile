@@ -48,9 +48,9 @@ gem 'turbolinks'
 gem 'bootstrap-sass'
 
 
-gem 'omniauth' # Authentication
+gem 'omniauth', '~> 1.3.1'  # Authentication
 gem 'omniauth-github'
-gem 'cancan'   # Authorisation
+gem 'cancan'                # Authorisation
 
 
 # Debugger
