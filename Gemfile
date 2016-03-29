@@ -29,7 +29,7 @@ gem 'draper'
 gem 'redis-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -49,6 +49,10 @@ gem 'bootstrap-sass'
 
 # Transactional emails
 gem 'mandrill-api'
+
+# Background jobs
+gem 'resque'
+gem 'resque-scheduler'
 
 
 gem 'omniauth', '~> 1.3.1'  # Authentication
