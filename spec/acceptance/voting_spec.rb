@@ -10,8 +10,9 @@ RSpec.describe 'vote on movies', type: :feature do
 
   before do
     author = User.create(
-      uid:  'null|12345',
-      name: 'Bob'
+      uid:    'null|12345',
+      name:   'Bob',
+      email:  'bob@movierama.dev'
     )
     Movie.create(
       title:        'Empire strikes back',
@@ -75,7 +76,26 @@ RSpec.describe 'vote on movies', type: :feature do
     end
   end
 
+  # context 'email notifictions' do
+  #   context 'when the movie owner has an email address' do
+  #     it 'sends an email notification for votes' do
+  #       page.like('Empire strikes back')
+  #       expect(VotesMailer.new_vote(movie.title, author.email, author.name, "like", user_movies_url(author))).to be true
+  #
+  #       page.hate('Empire strikes back')
+  #       expect(VotesMailer.new_vote(movie.title, author.email, author.name, "hate", user_movies_url(author))).to be true
+  #     end
+  #   end
+  #
+  #   context 'when the movie owner does not have an email address' do
+  #     it 'does not send an email notification for votes' do
+  #       page.like('Empire strikes back')
+  #       expect(VotesMailer.new_vote(movie.title, "", author.name, "like", user_movies_url(author))).to be false
+  #
+  #       page.hate('Empire strikes back')
+  #       expect(VotesMailer.new_vote(movie.title, "", author.name, "hate", user_movies_url(author))).to be false
+  #     end
+  #   end
+  # end
+
 end
-
-
-
