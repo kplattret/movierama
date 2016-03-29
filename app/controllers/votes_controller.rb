@@ -3,8 +3,7 @@ class VotesController < ApplicationController
     authorize! :vote, _movie
 
     _voter.vote(_type)
-    # Arguments expected: movie, email, name, vote_type, link
-    VotesMailer.new_vote(_movie.title, _movie.user.email, _movie.user.name, _type.to_s, user_movies_url(_movie.user))
+    _send_notification_email
     redirect_to root_path, notice: 'Vote cast'
   end
 
@@ -31,5 +30,10 @@ class VotesController < ApplicationController
 
   def _movie
     @_movie ||= Movie[params[:movie_id]]
+  end
+
+  def _send_notification_email
+    # Arguments expected: movie, email, name, vote_type, link (as strings)
+    NewVoteEmailJob.new(_movie.title, _movie.user.email, _movie.user.name, _type.to_s, user_movies_url(_movie.user)).enqueue
   end
 end
